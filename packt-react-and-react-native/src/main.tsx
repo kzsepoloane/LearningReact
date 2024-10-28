@@ -14,6 +14,10 @@ import MyList from "./examples/MyList.tsx";
 import TimerApp from "./examples/TimerApp.tsx";
 import StateApp from "./examples/StateManagement.tsx";
 import Hooks from "./examples/Hooks.tsx";
+import Monolith from "./examples/Monolith.tsx";
+import ModularMonolith from "./examples/ModularMonolith.tsx";
+import AddArticle from "./examples/components/AddArticle.tsx";
+import ArticleList from "./examples/components/ArticleList.tsx";
 
 const root_element = document.getElementById("root");
 const appState: {
@@ -49,6 +53,28 @@ createRoot(root_element!).render(
       <StateApp name={appState.name} age={appState.age} />
       <TimerApp />
       <Hooks />
+      <Monolith />
+      <ModularMonolith
+        addArticle={({
+          title,
+          summary,
+          onChangeTitle,
+          onChangeSummary,
+          onClickAdd,
+        }) => (
+          <AddArticle
+            name="Articles"
+            title={title}
+            summary={summary}
+            onChangeTitle={onChangeTitle}
+            onChangeSummary={onChangeSummary}
+            onClickAdd={onClickAdd}
+          />
+        )}
+        articleList={({ articles, onClickRemove }) => (
+          <ArticleList articles={articles} onClickRemove={onClickRemove} />
+        )}
+      />
     </>
   </StrictMode>
 );

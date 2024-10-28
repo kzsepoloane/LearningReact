@@ -1,4 +1,4 @@
-import { createRef, useCallback, useMemo, useRef } from "react";
+import { createRef, useCallback, useMemo } from "react";
 
 const Hooks = () => {
   const inputRef = createRef<HTMLInputElement>();
@@ -7,7 +7,7 @@ const Hooks = () => {
     if (inputRef.current) {
       inputRef.current.focus();
     }
-  }, []);
+  }, [inputRef]);
 
   const user: { name: string; age: number } = useMemo(() => {
     let sum = 0;
