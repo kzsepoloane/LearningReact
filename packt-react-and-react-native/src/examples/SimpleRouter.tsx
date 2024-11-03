@@ -8,7 +8,9 @@ import chapterSeven from "./routes/chapterSeven";
 import routeOne from "./one";
 import routeTwo from "./two";
 import Echo from "./components/Echo";
+import { lazy } from "react";
 
+const MyComponent = lazy(() => import("./MyComponent"));
 const router = createBrowserRouter([
   {
     path: "/",
@@ -31,6 +33,21 @@ const router = createBrowserRouter([
       {
         path: "echo/:msg",
         element: <Echo />,
+      },
+      {
+        path: "lazy",
+        element: (
+          <MyComponent title="Lazy" description="Loading using Lazy API" />
+        ),
+      },
+      {
+        path: "suspense",
+        element: (
+          <MyComponent
+            title="Suspense"
+            description="Loading using Lazy API with suspense"
+          />
+        ),
       },
     ],
   },

@@ -1,4 +1,7 @@
+import { Suspense } from "react";
 import { Link, Outlet } from "react-router-dom";
+import { FadeLoader } from "react-spinners";
+
 const param = "From Param";
 const query = new URLSearchParams({ msg: "From Query" });
 const Layout = () => {
@@ -22,8 +25,14 @@ const Layout = () => {
         <Link to={`echo/${param}`}>Echo Param</Link>
         <span> | </span>
         <Link to={`echo?${query.toString()}`}>Echo Query</Link>
+        <span> | </span>
+        <Link to="lazy">Lazy Loaded</Link>
+        <span> | </span>
+        <Link to="suspense">Suspense</Link>
       </nav>
-      <Outlet />
+      <Suspense fallback={<FadeLoader color="#36d7b7" />}>
+        <Outlet />
+      </Suspense>
     </main>
   );
 };
