@@ -17,7 +17,7 @@ const StateApp = (props: StateAppProps) => {
       setName(user.name);
       setAge(user.age);
     });
-  }, []);
+  }, [fetchUser]);
   return (
     <>
       <section>
