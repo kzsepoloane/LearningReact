@@ -1,5 +1,7 @@
+import { ReactNode } from "react";
+
 interface MySectionProps {
-  children: JSX.Element | JSX.Element[];
+  children: ReactNode;
 }
 
 function MySection(props: MySectionProps) {

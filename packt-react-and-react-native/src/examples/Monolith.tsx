@@ -23,12 +23,12 @@ const Monolith = () => {
   const [title, setTitle] = useState<string>("");
   const [summary, setSummary] = useState<string>("");
 
-  const onChangeTitle = (event: ChangeEvent) => {
-    setTitle((event.target as HTMLInputElement).value);
+  const onChangeTitle = (event: ChangeEvent<HTMLInputElement>) => {
+    setTitle(event.target.value);
   };
 
-  const onChangeSummary = (event: ChangeEvent) => {
-    setSummary((event.target as HTMLInputElement).value);
+  const onChangeSummary = (event: ChangeEvent<HTMLInputElement>) => {
+    setSummary(event.target.value);
   };
 
   const onClickAdd = useCallback(() => {
