@@ -1,10 +1,10 @@
 import { Outlet, RouteObject } from "react-router-dom";
 import UsersContainer from "../components/UsersContainer";
-import UserContainer from "../components/UserContainer";
+import UserContainer from "../components/UserContainter";
 import { fetchUser } from "../Models/User";
 
 const routes: RouteObject = {
-  path: "/users",
+  path: "users",
   element: <Outlet />,
   children: [
     {

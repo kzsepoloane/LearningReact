@@ -20,12 +20,12 @@ const appState: {
   age: 33,
 };
 const routes: RouteObject = {
-  path: "/ChapterThree",
+  path: "ChapterThree",
   element: <Outlet />,
   children: [
     {
       index: true,
-      element: <Navigate to="/ChapterThree/my-component" />,
+      element: <Navigate to="my-component" />,
     },
     {
       path: "my-component",

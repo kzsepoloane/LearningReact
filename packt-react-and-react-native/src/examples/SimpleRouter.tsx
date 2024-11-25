@@ -1,5 +1,4 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Layout from "./components/Layout";
 import App from "../App";
 import chapterTwo from "./routes/chapterTwo";
 import chapterThree from "./routes/chapterThree";
@@ -9,12 +8,30 @@ import routeOne from "./one";
 import routeTwo from "./two";
 import Echo from "./components/Echo";
 import { lazy } from "react";
+import GridLayout from "./GridLayout";
+import chapterNine from "./routes/chapterNine";
+import BatchingUpdates from "./BatchingUpdates";
+import StatePriority from "./StatePriority";
+import StatePriorityAsync from "./StatePriorityAsync";
+import FetchAPI from "./FetchAPI";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import ReactQuery from "./ReactQuery";
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import GraphQL from "./GraphQL";
+const queryClient = new QueryClient();
+const client = new ApolloClient({
+  uri: "https://api.github.com/graphql",
+  cache: new InMemoryCache(),
+  headers: {
+    Authorization: `Bearer ${import.meta.env.VITE_GITHUBTOKEN}`,
+  },
+});
 
 const MyComponent = lazy(() => import("./MyComponent"));
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Layout />,
+    element: <GridLayout />,
     children: [
       {
         index: true,
@@ -47,6 +64,39 @@ const router = createBrowserRouter([
             title="Suspense"
             description="Loading using Lazy API with suspense"
           />
+        ),
+      },
+      chapterNine,
+      {
+        path: "batching",
+        element: <BatchingUpdates />,
+      },
+      {
+        path: "priority",
+        element: <StatePriority />,
+      },
+      {
+        path: "priority-async",
+        element: <StatePriorityAsync />,
+      },
+      {
+        path: "fetch-api",
+        element: <FetchAPI />,
+      },
+      {
+        path: "react-query",
+        element: (
+          <QueryClientProvider client={queryClient}>
+            <ReactQuery />
+          </QueryClientProvider>
+        ),
+      },
+      {
+        path: "apollo",
+        element: (
+          <ApolloProvider client={client}>
+            <GraphQL />
+          </ApolloProvider>
         ),
       },
     ],

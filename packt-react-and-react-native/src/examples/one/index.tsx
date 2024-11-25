@@ -3,12 +3,12 @@ import First from "./First";
 import Second from "./Second";
 
 const routes: RouteObject = {
-  path: "/one",
+  path: "one",
   element: <Outlet />,
   children: [
     {
       index: true,
-      element: <Navigate to="/one/1" />,
+      element: <Navigate to="1" />,
     },
     {
       path: "1",

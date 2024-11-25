@@ -22,7 +22,7 @@ const appState: {
   age: 33,
 };
 const routes: RouteObject = {
-  path: "/ChapterTwo",
+  path: "ChapterTwo",
   element: <Outlet />,
   children: [
     {

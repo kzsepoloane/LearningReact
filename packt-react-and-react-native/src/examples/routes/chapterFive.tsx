@@ -5,12 +5,12 @@ import ArticleList from "../components/ArticleList";
 import AddArticle from "../components/AddArticle";
 
 const routes: RouteObject = {
-  path: "/ChapterFive",
+  path: "ChapterFive",
   element: <Outlet />,
   children: [
     {
       index: true,
-      element: <Navigate to="/ChapterFive/monolith" />,
+      element: <Navigate to="monolith" />,
     },
     {
       path: "monolith",

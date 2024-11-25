@@ -10,7 +10,7 @@ const Layout = () => {
       <nav>
         <Link to="/">Home</Link>
         <span>|</span>
-        <Link to="/ChapterTwo">Chapter One</Link>
+        <Link to="/ChapterTwo">Chapter Two</Link>
         <span>|</span>
         <Link to="/ChapterThree">Chapter Three</Link>
         <span>|</span>
@@ -29,6 +29,8 @@ const Layout = () => {
         <Link to="lazy">Lazy Loaded</Link>
         <span> | </span>
         <Link to="suspense">Suspense</Link>
+        <span> | </span>
+        <Link to="material-ui">Material UI</Link>
       </nav>
       <Suspense fallback={<FadeLoader color="#36d7b7" />}>
         <Outlet />
