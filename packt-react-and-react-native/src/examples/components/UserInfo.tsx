@@ -1,4 +1,4 @@
-import GithubUser from "../Models/GitHubUser";
+import GithubUser from "../models/GitHubUser";
 
 const UserInfo = ({ user }: { user: GithubUser }) => {
   return (

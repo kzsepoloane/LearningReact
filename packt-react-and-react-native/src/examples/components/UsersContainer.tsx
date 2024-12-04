@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { SortOrder, User, fetchUsers } from "../Models/User";
+import { SortOrder, User, fetchUsers } from "../models/User";
 import Users from "./Users";
 import { useSearchParams } from "react-router-dom";
 

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { User } from "../Models/User";
+import { User } from "../models/User";
 
 type UsersProps = {
   users: User[];

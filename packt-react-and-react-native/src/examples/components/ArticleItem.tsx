@@ -1,5 +1,5 @@
 import React from "react";
-import Article from "../Models/Article";
+import Article from "../models/Article";
 
 type ArticleItemProps = {
   article: Article;

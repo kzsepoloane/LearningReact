@@ -1,6 +1,6 @@
 import { useLoaderData, useParams } from "react-router-dom";
 import UserData from "./User";
-import { User } from "../Models/User";
+import { User } from "../models/User";
 
 const UserContainer = () => {
   const params = useParams();

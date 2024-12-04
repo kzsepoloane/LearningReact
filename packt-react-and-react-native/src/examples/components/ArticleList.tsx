@@ -1,4 +1,4 @@
-import Article from "../Models/Article";
+import Article from "../models/Article";
 import ArticleItem from "./ArticleItem";
 interface ArticleListProps {
   articles: Article[];

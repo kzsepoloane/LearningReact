@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import UserInfo from "./components/UserInfo";
-import GithubUser from "./Models/GitHubUser";
+import GithubUser from "./models/GitHubUser";
 
 const FetchAPI = () => {
   const [user, setUser] = useState<GithubUser | null>(null);

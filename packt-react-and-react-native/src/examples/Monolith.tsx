@@ -1,5 +1,5 @@
 import { ChangeEvent, useCallback, useState } from "react";
-import Article from "./Models/Article";
+import Article from "./models/Article";
 
 const id = (function* () {
   let id = 0;
