@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "next/typescript",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": ["@/features/*/*"]
+      }
+    ],
+    "import/no-cycle": "error",
+    "prettier/prettier": ["error", { "endOfLine": "auto" }]
+  }
+}
