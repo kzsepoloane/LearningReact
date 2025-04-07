@@ -18,7 +18,7 @@ export default function Products() {
                 : "text-blue-500 mr-4"
             }
           >
-            <a>Product 1</a>
+            Product 1
           </Link>
         </li>
         <li>
@@ -30,7 +30,7 @@ export default function Products() {
                 : "text-blue-500 mr-4"
             }
           >
-            <a>Product 2</a>
+            Product 2
           </Link>
         </li>
         <li>
@@ -42,7 +42,7 @@ export default function Products() {
                 : "text-blue-500 mr-4"
             }
           >
-            <a>Product 3</a>
+            Product 3
           </Link>
         </li>
         <li>
@@ -54,7 +54,7 @@ export default function Products() {
                 : "text-blue-500 mr-4"
             }
           >
-            <a>Product 4</a>
+            Product 4
           </Link>
         </li>
         <li>
@@ -66,7 +66,7 @@ export default function Products() {
                 : "text-blue-500 mr-4"
             }
           >
-            <a>Product 5</a>
+            Product 5
           </Link>
         </li>
         <li>
@@ -78,7 +78,12 @@ export default function Products() {
                 : "text-blue-500 mr-4"
             }
           >
-            <a>Product {randomProductID}</a>
+            Product {randomProductID}
+          </Link>
+        </li>
+        <li>
+          <Link href="/order-product" className="text-blue-500 mr-4">
+            Order Product
           </Link>
         </li>
       </ul>

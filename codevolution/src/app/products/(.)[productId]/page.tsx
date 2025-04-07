@@ -8,15 +8,15 @@ interface ProductDetailsProps {
 export const generateMetaData = async ({ params }: ProductDetailsProps) => {
   const productId = (await params).productId;
   return {
-    title: `Product ${productId}`,
-    description: `Product ${productId} description`,
+    title: `Intercepted Product ${productId}`,
+    description: `Intercepted Product ${productId} description`,
   };
 };
 export default async function ProductDetails({ params }: ProductDetailsProps) {
   const productId = (await params).productId;
   return (
     <div className="space-y-4">
-      <h1 className="text-3xl font-bold">Product {productId}</h1>
+      <h1 className="text-3xl font-bold">Intercepted Product {productId}</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, quae.
       </p>
@@ -28,9 +28,6 @@ export default async function ProductDetails({ params }: ProductDetailsProps) {
       </p>
       <Link href="/order-product" className="text-blue-500 mr-4">
         Order Product
-      </Link>
-      <Link href="/docs/Hello/From/Product" className="text-blue-500">
-        Go to Docs
       </Link>
     </div>
   );

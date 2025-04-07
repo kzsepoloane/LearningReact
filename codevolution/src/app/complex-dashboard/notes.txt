@@ -1,0 +1,8 @@
+Something curios with defaults in NextJS
+
+https://nextjs.org/docs/app/building-your-application/routing/defaults
+
+We can have matching routes in slots in which a page in the route is loaded.
+
+Not sure what happens with params and defaults though assuming slot a has a path archived with the params
+cat and slot b also excepts the param. Can I modify my default or do it consciously?

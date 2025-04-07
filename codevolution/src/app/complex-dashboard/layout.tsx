@@ -3,13 +3,16 @@ const Layout = ({
   usersanalytics,
   revenue,
   notifications,
+  login,
 }: {
   children: React.ReactNode;
   usersanalytics: React.ReactNode;
   revenue: React.ReactNode;
   notifications: React.ReactNode;
+  login: React.ReactNode;
 }) => {
-  return (
+  const isLoggedIn = false; // Replace with actual login check
+  return isLoggedIn ? (
     <div>
       <div>{children}</div>
       <div style={{ display: "flex" }}>
@@ -20,6 +23,8 @@ const Layout = ({
         <div style={{ display: "flex", flex: 1 }}>{notifications}</div>
       </div>
     </div>
+  ) : (
+    login
   );
 };
 

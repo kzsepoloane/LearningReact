@@ -35,6 +35,9 @@ export default function Home() {
             <Link href="/products">Products</Link>
           </li>
           <li>
+            <Link href="/order-product">Order Product</Link>
+          </li>
+          <li>
             <Link href="/dashboard">Dashboard</Link>
           </li>
           <li>
@@ -45,6 +48,9 @@ export default function Home() {
           </li>
           <li>
             <Link href="/complex-dashboard">Complex Dashboard</Link>
+          </li>
+          <li>
+            <Link href="/hello">Hello</Link>
           </li>
         </ol>
 

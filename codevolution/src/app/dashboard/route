@@ -1,0 +1,9 @@
+//Will overwrite the page.tsx in the dashboard folder
+/* const GET = async () => {
+  return new Response("Hello From Dashboard", {
+    status: 200,
+    statusText: "OK",
+  });
+};
+
+export { GET }; */

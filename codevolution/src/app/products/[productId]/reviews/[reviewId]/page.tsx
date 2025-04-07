@@ -1,5 +1,5 @@
 import React from "react";
-
+import Link from "next/link";
 export default async function ProductReview({
   params,
 }: {
@@ -20,6 +20,9 @@ export default async function ProductReview({
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, quae.
       </p>
+      <Link href="/contact-us" className="text-blue-500 mr-4">
+        Do you have any questions? Contact us
+      </Link>
     </div>
   );
 }
