@@ -6,3 +6,4 @@ const NestedErrorComponent = () => {
 };
 
 export default NestedErrorComponent;
+export const dynamic = "force-dynamic";

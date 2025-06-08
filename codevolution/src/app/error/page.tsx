@@ -6,3 +6,4 @@ const ErrorComponent = () => {
 };
 
 export default ErrorComponent;
+export const dynamic = "force-dynamic";

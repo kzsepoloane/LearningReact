@@ -1,5 +1,5 @@
 "use client";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 const getRandomProduct = () => Math.floor(Math.random() * 100) + 1;
 const OrderProduct = () => {
   const router = useRouter();

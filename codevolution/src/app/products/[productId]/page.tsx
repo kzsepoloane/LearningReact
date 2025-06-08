@@ -1,18 +1,16 @@
 import React from "react";
 import Link from "next/link";
+import { Metadata } from "next";
+import { ProductDetailsProps } from "../_lib/ProductDetailsProps";
 
-interface ProductDetailsProps {
-  params: Promise<{ productId: string }>;
-}
-
-export const generateMetaData = async ({ params }: ProductDetailsProps) => {
-  const productId = (await params).productId;
+export async function generateMetadata({ params }: {params: ProductDetailsProps}): Promise<Metadata> {
+  const {productId} = await params;
   return {
     title: `Product ${productId}`,
     description: `Product ${productId} description`,
   };
-};
-export default async function ProductDetails({ params }: ProductDetailsProps) {
+}
+export default async function ProductDetails({ params }: {params: ProductDetailsProps}) {
   const productId = (await params).productId;
   return (
     <div className="space-y-4">
