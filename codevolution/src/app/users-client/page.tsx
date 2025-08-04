@@ -1,11 +1,14 @@
 "use client";
 import React from "react";
 import { User } from "@/app/_lib/User";
+import { useAuth, useUser } from "@clerk/nextjs";
 
 const UsersClient = () => {
   const [users, setUsers] = React.useState<User[]>([]);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState<string | null>(null);
+  const { isLoaded: isLoadedAuth, userId, sessionId, getToken } = useAuth();
+  const { isLoaded: isLoadedUser, user, isSignedIn } = useUser();
   React.useEffect(() => {
     const fetchUsers = async () => {
       try {
@@ -28,6 +31,10 @@ const UsersClient = () => {
         setLoading(false);
       }
     };
+    if (!isLoadedAuth || !isLoadedUser || !isSignedIn) {
+      return null;
+    }
+    console.log(userId, sessionId, getToken, user, isLoadedAuth, isLoadedUser);
     fetchUsers();
   }, []);
   return (

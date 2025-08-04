@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "./components/theme-provider";
 import "./globals.css";
 import { ErrorWrapper } from "./error-wrapper";
+import { Navigation } from "./components/navigation";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,19 +33,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <ThemeProvider>
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-          <header style={{ backgroundColor: "lightblue", padding: "1rem" }}>
-            <p>Default Layout Header</p>
-          </header>
-          <ErrorWrapper>{children}</ErrorWrapper>
-          <footer style={{ backgroundColor: "ghostwhite", padding: "1rem" }}>
-            <p>Footer</p>
-          </footer>
-        </body>
-      </ThemeProvider>
+      <ClerkProvider>
+        <ThemeProvider>
+          <body
+            className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          >
+            <header style={{ backgroundColor: "lightblue", padding: "1rem" }}>
+              <Navigation />
+            </header>
+            <ErrorWrapper>{children}</ErrorWrapper>
+            <footer style={{ backgroundColor: "ghostwhite", padding: "1rem" }}>
+              <p>Footer</p>
+            </footer>
+          </body>
+        </ThemeProvider>
+      </ClerkProvider>
     </html>
   );
 }
